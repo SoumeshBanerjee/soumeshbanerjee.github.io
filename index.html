@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Soumesh Banerjee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
         .tags:not(:last-child) {
             margin-bottom: 0;
@@ -19,45 +23,124 @@
 </head>
 
 <body>
-    <section class="hero is-info is-fullheight">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Soumesh Banerjee
-                </h1>
-                <h2 class="subtitle">
-                    <div class="tags">
-                        <span class="tag is-danger">Senior Software Engineer</span>
-                        <span class="tag is-warning">iOS</span>
-                        <span class="tag is-warning">AWS</span>
-                        <span class="tag is-warning">Linux</span>
-                        <span class="tag is-warning">MacOSX</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag is-dark">GoLang</span>
-                        <span class="tag is-dark">Rust</span>
-                        <span class="tag is-dark">NodeJS</span>
-                        <span class="tag is-dark">ObjectiveC</span>
-                        <span class="tag is-dark">Swift</span>
-                        <span class="tag is-dark">Python</span>
-                        <span class="tag is-dark">C</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag is-link">System Designs & Patterns</span>
-                        <span class="tag is-link">Wiki & Markdown</span>
-                        <span class="tag is-link">PlantUML</span>
-                        <span class="tag is-link">JIRA</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag is-light">IOT</span>
-                        <span class="tag is-light">Machine Learning</span>
-                        <span class="tag is-light">Communication Protocols</span>
-                        <span class="tag is-light">Embeded-C</span>
-                    </div>
-                </h2>
+    <div id="app">
+        <div class="modal" :class="{'is-active': isInfoModalShown}">
+            <div class="modal-background" @click="toggleInfoModal"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-left">
+                            <figure class="image is-64x64">
+                                <img src="https://pbs.twimg.com/profile_images/754358961642561536/LfxzQpm0_400x400.jpg"
+                                    alt="Image" style="border-radius: 50%">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Soumesh Banerjee</strong>
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="twitter" href="https://twitter.com/sud_oo"
+                                        target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="githib" href="https://github.com/SoumeshBanerjee"
+                                        target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-github" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="linkedin"
+                                        href="https://www.linkedin.com/in/sudoo/" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="stackoverflow"
+                                        href="https://stackoverflow.com/users/2256024/soumesh-banerjee" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-stack-overflow" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="call" href="tel:+918591532274" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-phone" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="resume" href="cv/SoumeshBanerjee-Resume.pdf"
+                                        target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
-    </section>
+        <section class="hero is-info is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Soumesh Banerjee
+                        <button class="button is-black" @click="toggleInfoModal">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </h1>
+                    <h2 class="subtitle">
+                        <div class="tags">
+                            <span class="tag is-danger">Senior Software Engineer</span>
+                            <span class="tag is-warning">iOS</span>
+                            <span class="tag is-warning">AWS</span>
+                            <span class="tag is-warning">Linux</span>
+                            <span class="tag is-warning">MacOSX</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag is-dark">GoLang</span>
+                            <span class="tag is-dark">Rust</span>
+                            <span class="tag is-dark">NodeJS</span>
+                            <span class="tag is-dark">ObjectiveC</span>
+                            <span class="tag is-dark">Swift</span>
+                            <span class="tag is-dark">Python</span>
+                            <span class="tag is-dark">C</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag is-link">System Designs & Patterns</span>
+                            <span class="tag is-link">Wiki & Markdown</span>
+                            <span class="tag is-link">PlantUML</span>
+                            <span class="tag is-link">JIRA</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag is-light">IOT</span>
+                            <span class="tag is-light">Machine Learning</span>
+                            <span class="tag is-light">Communication Protocols</span>
+                            <span class="tag is-light">Embeded-C</span>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                isInfoModalShown: false
+            },
+            methods: {
+                toggleInfoModal: function (e) {
+                    this.isInfoModalShown = !this.isInfoModalShown
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
